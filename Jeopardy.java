@@ -43,7 +43,6 @@ public class Jeopardy implements ActionListener {
 		JFrame frame = new JFrame();
 		quizPanel = new JPanel();
 		frame.setLayout(new BorderLayout());
-		
 		// 1. Make the frame show up
 frame.show();
 
@@ -54,27 +53,29 @@ frame.show();
 		// 4. Add the header component to the quizPanel
 option.add(quizPanel);
 // 5. Add the quizPanel to the frame
-option.add(frame);
+frame.add(option);
 		
 		// 6. Use the createButton method to set the value of firstButton 
-	JButton first = createButton("500 dollars");
-	// 7. Add the firstButton to the quizPanel
-		option.add(first);
-		// 8. Write the code inside the createButton() method below. Check that your game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
-		first("200");{
-			
-		}
-		// 9. Use the secondButton variable to hold a button using the createButton method
-		
-		// 10. Add the secondButton to the quizPanel
-		
-		// 11. Add action listeners to the buttons (2 lines of code)
+	JButton first = createButton();
 	
+	// 7. Add the firstButton to the quizPanel
+quizPanel.add(first);
+frame.pack();
+		// 8. Write the code inside the createButton() method below. Check that your game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
+			
+		
+		// 9. Use the secondButton variable to hold a button using the createButton method
+		JButton fi = createButton();
+		// 10. Add the secondButton to the quizPanel
+		quizPanel.add(third);
+		// 11. Add action listeners to the buttons (2 lines of code)
+	first.addActionListener(null);
+	third.addActionListener(null);
 
 		// 12. Fill in the actionPerformed() method below
 				
 		frame.pack();
-		quizPanel.setLayout(new GridLayout(buttonCount+1, 3));
+		quizPanel.setLayout(new GridLayout(buttonCount+2, 1));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height, Toolkit.getDefaultToolkit().getScreenSize().width);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -83,21 +84,20 @@ option.add(frame);
 	/*
 	 * 13. Use the method provided to play the Jeopardy theme music 
 	 * 
-	 * 14. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
-	 *
+	 * 14. Add buttons so that you have $200, $400, $600, $800 and $1000 questions	 
 	 * [optional] Use the showImage or playSound methods when the user answers a question 
 	 */
-	
+	JButton third = createButton();{third.setText("200");} 
 	private JButton createButton() {
 		// Create a new JButton
-		JButton first =new JButton();
+		JButton button =new JButton();
 		// Set the text of the button to the dollarAmount
-		first.setText("500 dollars");
+		button.setText("500");
 		// Increment the buttonCount (this should make the layout vertical)
 	
 		// Return your new button instead of the temporary button
 		
-		return new JButton("temporary button");
+		return new JButton("first button");
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
