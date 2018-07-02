@@ -7,7 +7,7 @@
 
 import java.applet.AudioClip;
 import java.io.IOException;
-import java.util.concurrent.SynchronousQueue;
+import java.sql.Time;
 
 import javax.swing.JApplet;
 
@@ -20,9 +20,9 @@ public class CowTimer {
 
 	public static void main(String[] args) throws InterruptedException {
 		/* 1. Make a CowTimer, set the time and start it. */
-CowTimer john = new CowTimer();
-john.setTime(60);
-john.start();
+CowTimer Time = new CowTimer();
+Time.setTime(2);
+Time.start();
 	}
 
 	private int minutes;
@@ -30,20 +30,15 @@ john.start();
 	public void setTime(int minutes) {
 		this.minutes = minutes;
 		System.out.println("Cow set to " + minutes + " minutes.");
-		
 	}
-
+;
 	public void start() throws InterruptedException {
 		/*
 		 * 2. Count down the minutes, print the current minute then sleep for 60
 		 * seconds using Thread.sleep(int milliseconds).
 		 */
-		for(int milliseconds = 1 minute){
-			System.out.println("");
-		}
-		}
 
-		/*
+/*
 		 * 3. When the timer is finished, use the playSound method to play a moo
 		 * sound. You can use the .wav file in the default package, or you can download 
 		 * one from freesound.org, then drag it intothe default package. 
