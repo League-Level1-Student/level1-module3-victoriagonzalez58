@@ -24,11 +24,13 @@ public class BookOfIllusions extends MouseAdapter {
 	public static void main(String[] args) throws Exception {
 		BookOfIllusions illusions = new BookOfIllusions();
 		illusions.createBook();
+
 	}
 
 	// 1. Make a JFrame variable and initialize it using "new JFrame()"
+	JFrame frame = new JFrame();
+private void createBook() {
 
-	private void createBook() {
 		// 2. make the frame visible
 		// 3. set the size of the frame
 		// 4. find 2 images and save them to your project’s default package

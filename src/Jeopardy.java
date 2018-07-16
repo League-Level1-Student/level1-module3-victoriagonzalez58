@@ -43,35 +43,33 @@ public class Jeopardy implements ActionListener {
 		JFrame frame = new JFrame();
 		quizPanel = new JPanel();
 		frame.setLayout(new BorderLayout());
-		
 		// 1. Make the frame show up
-frame.show();
-
+frame.setVisible(true);
 		// 2. Give your frame a title
 		frame.setTitle("Jeopardy");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
 		JPanel option = createHeader("dogs");
 		// 4. Add the header component to the quizPanel
-option.add(quizPanel);
+quizPanel.add(option);
 // 5. Add the quizPanel to the frame
-option.add(frame);
+frame.add(quizPanel);
 		
 		// 6. Use the createButton method to set the value of firstButton 
-	JButton first = createButton("5 dollars");
+	firstButton = createButton("500");
 	// 7. Add the firstButton to the quizPanel
-		option.add(first);
+		option.add(firstButton);
 		// 8. Write the code inside the createButton() method below. Check that your game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 		
 		// 9. Use the secondButton variable to hold a button using the createButton method
-		
+		secondButton = createButton("400");
 		// 10. Add the secondButton to the quizPanel
-		
+		option.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
-	
-
+	firstButton.addActionListener(null);
+	secondButton.addActionListener(null);
+frame.pack();
 		// 12. Fill in the actionPerformed() method below
 				
-		frame.pack();
 		quizPanel.setLayout(new GridLayout(buttonCount+1, 3));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height, Toolkit.getDefaultToolkit().getScreenSize().width);
@@ -90,12 +88,11 @@ option.add(frame);
 		// Create a new JButton
 		JButton butto =new JButton();
 		// Set the text of the button to the dollarAmount
-		butto
+		butto.setText(dollarAmount);
 		// Increment the buttonCount (this should make the layout vertical)
-	
 		// Return your new button instead of the temporary button
 		
-		return new JButton("temporary button");
+		return new JButton(dollarAmount);
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
